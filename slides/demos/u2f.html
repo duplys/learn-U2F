@@ -60,33 +60,12 @@
     <!-- Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#333333">
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
   <body>
-    <header role="banner">
-      <nav role="navigation">
-        <p class="logo"><a href="../index.html" title="WebSlides">WebSlides</a></p>
-        <ul>
-          <li class="github">
-            <a rel="external" href="https://github.com/webslides/webslides" title="Github">
-              <svg class="fa-github">
-                <use xlink:href="#fa-github"></use>
-              </svg>
-              <em>WebSlides</em>
-            </a>
-          </li>
-          <li class="twitter">
-            <a rel="external" href="https://twitter.com/webslides" title="Twitter">
-              <svg class="fa-twitter">
-                <use xlink:href="#fa-twitter"></use>
-              </svg>
-              <em>@WebSlides</em>
-            </a>
-          </li>
-          <!--  <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li> -->
-        </ul>
-      </nav>
-    </header>
-
     <main role="main">
       <article id="webslides">
 
@@ -104,39 +83,110 @@
             <br>
             <br>
             <p>
-              Paul Duplys | <a href="https://twitter.com/duplys">@duplys</a> | <a href="https://github.com/duplys">GitHub profile</a> | <a href="https://duplys.github.io">duplys.github.io</a>
+              Paul Duplys | 
+              <svg class="fa-twitter">
+                <use xlink:href="#fa-twitter"></use>
+              </svg> 
+              <a href="https://twitter.com/duplys">@duplys</a> |  
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              <a href="https://github.com/duplys">duplys</a> | 
+              <svg class="fa-home">
+                <use xlink:href="#fa-home"></use>
+              </svg>
+              <a href="https://duplys.github.io">duplys.github.io</a>
             </p>
           </div>
         </section>
 
         <section class="bg-apple">
-          <span class="background dark" style="background-image:url('https://source.unsplash.com/FXFz-sW0uwo/')"></span>
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/oQuP_XBjOMY/')"></span>
           <div class="wrap">
-            <h2>Who Am I?</h2>
-            <p class="text-intro">
-              Some text
-            </p>
+            <h1>Who Am I?</h1>
+            <ul class="text-intro">
+              <li>Computer scientist by education (University of Tuebingen)</li>
+              <li>Information security researcher (PhD in Side Channel Analysis, 12+ years working on various security topics)</li>
+              <li>Senior manager "Safety, Security & Privacy" group @ Bosch Corporate Research</li>
+              <li>Program lead "Security, Privacy & Safety" @ Bosch Corporate Research</li>
+            </ul>
           </div>
         </section>
 
         <section class="bg-apple">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/FZS9kYXpH0I/')"></span>
           <div class="wrap">
-            <h2>What the Internet Used to Be</h2>
-            <p class="text-intro">
-              Typical setup in the 1990's ... only few services, probably only e-mail. Still, email back then was a rather exotic stuff used only by technically savvy people. 
-            </p>
+            <h1>Today's Fahrplan</h1>
+            <ul class="text-intro">
+              <li>Why Authentication?</li>
+              <li>What is Authentication?</li>
+              <li></li>
+              <li></li>
+            </ul>
           </div>
         </section>
 
         <section class="bg-apple">
+          <!-- <span class="background dark" style="background-image:url('https://source.unsplash.com/FXFz-sW0uwo/')"></span> -->
           <div class="wrap">
-            <h2>What the Internet is Now</h2>
-            <p class="text-intro">
-              What is the average number of online services per user?
-            </p>
+            <h1>Why Authentication?</h1>
+          </div>
+        </section>
+
+        <!-- Internet users had an average of 8.5 social media accounts in 2018, according to Statista (avg 4.8 in 2014). -->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <div class="wrap">
+              <h2 class="text-data">8.5</h2>
+              <h3>average number of social media accounts per internet user in 2018</h3>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
             <p>
-              https://digitalguardian.com/blog/uncovering-password-habits-are-users-password-security-habits-improving-infographic
+              Source: <a href="https://www.statista.com/statistics/788084/number-of-social-media-accounts/">Statista "Average number of social media accounts per internet user from 2013 to 2018"</a>
             </p>
+          </div>
+        </section>
+
+        <!-- An average person has 70-80 passwords, according to the research by the password manager NordPass. -->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <div class="wrap">
+              <h2 class="text-data">70-80</h2>
+              <h3>average number of passwords per person in 2019</h3>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://www.newswire.com/news/new-research-most-people-have-70-80-passwords-21103705">Newswire's article "New Research: Most People Have 70-80 Passwords", February 27, 2020</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- The average business employee must keep track of 191 passwords, according to a report from LastPass. -->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <div class="wrap">
+              <h2 class="text-data">191</h2>
+              <h3>number of password an average business employee must keep track of</h3>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://www.securitymagazine.com/articles/88475-average-business-user-has-191-passwords">Security Magazine's article "Average Business User Has 191 Passwords"</a>
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2><b>Secure authentication</b> is crucial for protecting access to these accounts</h2>
           </div>
         </section>
 
@@ -157,11 +207,10 @@
             <br>
             <br>
             <p>
-              Source: <a href="http://cacr.uwaterloo.ca/hac/about/chap1.pdf">Menezes, Alfred J., Jonathan Katz, Paul C. Van Oorschot, and Scott A. Vanstone. <i>Handbook of applied cryptography</i>. CRC press, 1996 &mdash; Chapter 1, Section 1.7</a>
+              Source: <a href="http://cacr.uwaterloo.ca/hac/about/chap1.pdf">Menezes, Alfred J., Van Oorschot, Paul C. and Vanstone, Scott A. <i>Handbook of applied cryptography</i>. CRC press, 1996 &mdash; Chapter 1, Section 1.7</a>
             </p>
           </div>
         </section>
-
 
         <section class="bg-apple">
           <div class="wrap">
@@ -174,7 +223,7 @@
             <br>
             <br>
             <p>
-              Source: <a href="http://cacr.uwaterloo.ca/hac/about/chap1.pdf">Menezes, Alfred J., Jonathan Katz, Paul C. Van Oorschot, and Scott A. Vanstone. <i>Handbook of applied cryptography</i>. CRC press, 1996 &mdash; Chapter 1, Section 1.7</a>
+              Source: <a href="http://cacr.uwaterloo.ca/hac/about/chap1.pdf">Menezes, Alfred J., Van Oorschot, Paul C. and Vanstone, Scott A.  <i>Handbook of applied cryptography</i>. CRC press, 1996 &mdash; Chapter 1, Section 1.7</a>
             </p>
           </div>
         </section>
@@ -182,15 +231,147 @@
         <section class="bg-apple">
           <div class="wrap">
             <figure>
-              <img class="aligncenter" src="../static/images/authentication-no-background.png" alt="authentication" width="1000">
+              <img class="aligncenter" src="../static/uml/authentication.png" alt="authentication" width="500">
             </figure>
+          </div>
+        </section>
+
+        <!-- Authentication Types-->
+        <section class="bg-apple">
+          <div class="wrap">
+            <blockquote class="text-quote">
+              <p>
+                The most common technique is by the verifier checking the correctness of a message (possibly in response to an earlier message) which demonstrates that the claimant is in possesion of a <b>secret associated by design with the genuine party</b>.
+              </p>
+            </blockquote>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="http://cacr.uwaterloo.ca/hac/about/chap10.pdf">Menezes, Alfred J., Van Oorschot, Paul C. and Vanstone, Scott A.  <i>Handbook of applied cryptography</i>. CRC press, 1996 &mdash; Chapter 10, Section 10.1</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- Authentication Types-->
+        <section class="bg-apple">
+          <div class="wrap">
+            <p class="text-intro">
+              Objectives of entity authentication protocols:
+              <ul>
+                <li><i>(correctness)</i> In case of honest parties, the protocol completes with the verifier B accepting claimant's A identity</li>
+                <li><i>(transferability)</i> B cannot reuse an authentification exchange with A so as to successfully impersonate A to a third party C</li>
+                <li><i>(impersonation)</i> The probability is negligible that any party C distinct from A, carrying out the protocol and playing the role of A, can cause B to accept A's identity. (<i>negligible</i> means "so small that it is not of practical significance")</li>
+                <li>The above points remain true even if:
+                  <ul>
+                    <li>a large number of previous authentications between A and B has been observed,</li>
+                    <li>the attacker C has participated in previous protocol executions with either or both A and B, and</li>
+                    <li>multiple instances of the protocol, possibly initiated by C, are running in parallel.</li>
+                  </ul>
+                </li>
+              </ul>
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="http://cacr.uwaterloo.ca/hac/about/chap1.pdf">Menezes, Alfred J., Van Oorschot, Paul C. and Vanstone, Scott A.  <i>Handbook of applied cryptography</i>. CRC press, 1996 &mdash; Chapter 10, Section 10.1.1</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- Authentication Types-->
+        <section class="bg-apple">
+          <div class="wrap">
+            <p class="text-intro">
+              Basis of entity authentication:
+              <ul>
+                <li><i>something known.</i> Examples include standard passwords (sometimes used to derive a symmetric key), Personal Identification Numbers (PINs), and the secret or private keys whose knowledge is demonstrated in challenge-response protocols.</li>
+                <li><i>something possessed.</i> This is typically a physical accessory, resembling a metal key or passport function. Examples include magnetic-striped cards, chipcards (like your bank or credit card), and customized generators which provide time-variant passwords.</li>
+                <li><i>something inherent</i> (to a human or a machine). This category includes methods which make use of human or machine physical characteristics and involuntary actions (biometrics), such as handwritten signatures, fingerprints, voice, dynamic keyboard characteristics, or physical unclonable functions.</li>
+              </ul>
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="http://cacr.uwaterloo.ca/hac/about/chap1.pdf">Menezes, Alfred J., Van Oorschot, Paul C. and Vanstone, Scott A.  <i>Handbook of applied cryptography</i>. CRC press, 1996 &mdash; Chapter 10, Section 10.1.1</a>
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Password-based Authentication</h2>
+            <p class="text-intro">
+              Passwords is the prevailent form of authentication in the internet. Security of password-based authentication essentially<sup>*</sup> relies on the assumption that the attacker cannot guess the password (either directly via the API or indirectly via rainbow tables)
+              </p>
+              <br>
+              <br>
+              <br>
+              <p>
+                <sup>*</sup> as an alternative, the attacker could also trick its victim into disclosing the password (e.g., using phishing or other social engineering techniques), but this applies to other authentication methods as well.
+              </p>
+          </div>
+        </section>
+
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2><b>Strong</b> passwords needed!</h2>
+          </div>
+        </section>
+
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2>Examples?</h2>
+          </div>
+        </section>
+
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2>tzYjcOnT}XTBt@S+Y0i5o|</h2>
+          </div>
+        </section>
+
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2>'Rt},<|sh:V0F~zi^=@1Jj</h2>
+          </div>
+        </section>
+
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2>G"8J*9Tv)Iw*RW&lx,ZAgY</h2>
+          </div>
+        </section>
+
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <figure>
+              <img class="aligncenter" src="../static/images/face-scream.png" alt="scream" width="150">
+            </figure>
+          </div>
+        </section>
+
+        <!-- 
+        <section class="bg-apple">
+          <span class="background" style="background-image:url('https://source.unsplash.com/qDY9ahp0Mto/')"></span>
+        </section>
+        -->
+
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>The Problem with Password-based Authentication</h2>
+            <p class="text-intro">
+              In practice, strong passwords are <b>impossible to memorize</b>, especially if you need dozens of them. As a result, most users choose simple &mdash; i.e., weak &mdash; passwords and re-use them across multiple accounts and online services.
+            </p>
           </div>
         </section>
 
         <section class="bg-apple">
           <div class="wrap">
             <figure>
-              <img class="aligncenter" src="../static/uml/u2f_authentication.png" alt="U2F authentication" width="1200">
+              <img class="aligncenter" src="../static/uml/u2f_authentication.png" alt="U2F authentication" width="800">
             </figure>
           </div>
         </section>
@@ -479,31 +660,6 @@
           </div>
         </section>
 
-
-
-        <section class="bg-apple">
-          <div class="wrap">
-            <p class="text-intro">
-              Useful Links
-            </p>
-            <p>
-              <ul>
-                <li><a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">Universal 2nd Factor (U2F) Overview</a></li>
-                <li><a href="https://en.wikipedia.org/wiki/FIDO_Alliance">Wikipedia article on FIDO Alliance</a></li>
-                <li><a href=""></a></li>
-                <li><a href="https://fidoalliance.org/specifications/download/">All FIDO Alliance specifications</a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-              </ul>
-            </p>
-                        
-            
-          </div>
-        </section>
-
         <section class="bg-apple">
           <div class="wrap">
             <p class="text-intro">
@@ -597,8 +753,33 @@
               <figure><img class="aligncenter" src="../static/images/u2f_protocol.png" alt="iPhone"></figure>
             </div>
             <p class="text-intro">
-              Some text
+              <p>
+                $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+              </p>
             </p>
+          </div>
+        </section>
+
+        <section class="bg-apple">
+          <div class="wrap">
+            <p class="text-intro">
+              Useful Links
+            </p>
+            <p>
+              <ul>
+                <li><a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">Universal 2nd Factor (U2F) Overview</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/FIDO_Alliance">Wikipedia article on FIDO Alliance</a></li>
+                <li><a href=""></a></li>
+                <li><a href="https://fidoalliance.org/specifications/download/">All FIDO Alliance specifications</a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+              </ul>
+            </p>
+                        
+            
           </div>
         </section>
 
@@ -1259,66 +1440,8 @@
           </div>
           <!-- .end .wrap -->
         </section>
-        <section class="bg-black aligncenter">
-          <span class="background light" style="background-image:url('https://source.unsplash.com/UxtIESWxLh8/')"></span>
-          <div class="wrap">
-            <h2>Embedding Media</h2>
-          </div>
-          <!-- .end .wrap -->
-        </section>
-        <section class="bg-apple">
-          <div class="wrap">
-            <div class="content-left">
-              <h3><a href="https://webslides.tv/demos/media#slide=2">YouTube API</a></h3>
-              <p>Embed videos with loop, autoplay, and muted attributes. The video will automatically play when the slide is loaded.</p>
-              <pre>&lt;div class="embed"&gt;
- &lt;div data-youtube data-youtube-id=&quot;CQY3KUR3VzM&quot; data-autoplay &gt;&lt;/div&gt;
-&lt;/div&gt;</pre>
-              <p><code>.embed</code> (responsive)</p>
-            </div>
-            <!-- end .content-left -->
-            <div class="content-left">
-              <!-- <div class="embed"> = Responsive -->
-              <div class="embed">
-                <div data-youtube data-youtube-id="CQY3KUR3VzM" data-autoplay data-no-controls></div>
-              </div>
-              <!-- end .embed -->
-            </div>
-            <!-- end .content-left -->
-          </div>
-          <!-- .end .wrap -->
-        </section>
-        <section class="bg-apple fullscreen">
-          <!-- Fullscreen Video -->
-          <div class="embed">
-            <div data-youtube data-youtube-id="lvOKBQvbLhg" data-autoplay></div>
-          </div>
-          <!-- .end .embed -->
-        </section>
-        <section class="fullscreen bg-apple aligncenter">
-         <div class="embed">
-           <video autoplay loop muted poster="https://webslides.tv/static/images/peggy.jpg">
-            <source src="https://webslides.tv/static/videos/peggy.mp4" type="video/mp4">
-           </video>
-          </div><!-- .embed -->
-          <!-- .wrap = container (width: 90%) -->
-          <div class="wrap size-50">
-            <h2><strong>Be Awesome</strong></h2>
-          </div>
-        </section>
-        <section class="fullscreen bg-black aligncenter">
-          <div class="embed dark">
-             <video autoplay loop muted poster="https://webslides.tv/static/images/peggy.jpg">
-             <source src="https://webslides.tv/static/videos/peggy.mp4" type="video/mp4">
-            </video>
-          </div><!-- .embed -->
-          <!-- .wrap = container (width: 90%) -->
-          <div class="wrap size-50">
-            <h2><strong>Think Different</strong></h2>
-            <p>Overlay: <code>fullscreen.bg-black > .embed.dark</code> or .light</p>
-          </div>
-          <!-- .end .wrap -->
-        </section>
+ 
+
         <section class="bg-apple aligncenter">
           <span class="background-right-bottom" style="background-image:url('https://webslides.tv/static/images/tim-cook.png')"></span>
           <div class="wrap">
@@ -1326,6 +1449,7 @@
           </div>
           <!-- .end .wrap -->
         </section>
+
         <section class="bg-apple aligncenter">
           <div class="wrap">
             <div class="cta">
