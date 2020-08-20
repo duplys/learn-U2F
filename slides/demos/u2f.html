@@ -586,7 +586,6 @@
             <p class="text-intro">
               The U2F eco-system is designed to provide strong authentication for users on the web while preserving the user's privacy. The user carries a 'U2F device' as a second factor.
             </p>
-
             <ul class="flexblock metrics">
               <li> 
                 <figure>
@@ -603,21 +602,6 @@
                   <img class="bg-light aligncenter" src="../static/images/yubico-series-5.png" alt="scream" width="300" style="border-radius: 50%">
                 </figure>
             </ul>
-          </div>
-        </section>
-
-        <section class="bg-apple">
-          <div class="wrap">
-            <h2>U2F: Strong Authentication and Privacy for the Web</h2>
-            <p class="text-intro">
-              When the user registers the U2F device at an account at a particular origin (such as http://www.company.com) the device creates a new key pair usable only at that origin and gives the origin the public key to associate with the account. When the user authenticates (i.e., logs in) to the origin, in addition to username and password, the origin (in this case, http://www.company.com) can check whether the user has the U2F device by verifying a signature created by the device.
-            </p>
-            <p>
-              The user is able to use the same device across multiple sites on the web - it thus serves asthe user's physical web keychain with multiple (virtual) keys to various sites provisionedfrom one physical device. Using the open U2F standard, any origin will be able to use anybrowser (or OS) which has U2F support to talk to any U2F compliant device presented bythe user to enable strong authentication.
-            </p>
-            <p>
-              The U2F device registration and authentication operations are exposed through JavaScriptAPIs built into the browser and, in following phases, native APIs in mobile OSes.
-            </p>
             <p>
               Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
             </p>
@@ -628,14 +612,22 @@
           <div class="wrap">
             <h2>U2F: Strong Authentication and Privacy for the Web</h2>
             <p class="text-intro">
-              Goal: 
+              When the user registers the U2F device at an account at a particular origin (such as http://www.company.com) the device creates a new <b>key pair usable only at that origin</b> and <b>gives the origin the public key to associate with the account</b>. When the user authenticates (i.e., logs in) to the origin, in addition to username and password, the origin (in this case, http://www.company.com) can check whether the user has the U2F device by <b>verifying a signature</b> created by the device.
             </p>
             <p>
-              The U2F eco-system is designed to provide strong authentication for users on the web while preserving the user's privacy. The user carries a 'U2F device' as a second factor.
+              <figure>
+                <img class="aligncenter" src="../static/uml/u2f_key_pair.png" alt="scream" width="1200">
+              </figure>
             </p>
             <p>
-              When the user registers the U2F device at an account at a particular origin (such as http://www.company.com) the device creates a new key pair usable only at that origin and gives the origin the public key to associate with the account. When the user authenticates (i.e., logs in) to the origin, in addition to username and password, the origin (in this case, http://www.company.com) can check whether the user has the U2F device by verifying a signature created by the device.
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
             </p>
+          </div>
+        </section>
+
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>U2F: Strong Authentication and Privacy for the Web</h2>
             <p>
               The user is able to use the same device across multiple sites on the web - it thus serves asthe user's physical web keychain with multiple (virtual) keys to various sites provisionedfrom one physical device. Using the open U2F standard, any origin will be able to use anybrowser (or OS) which has U2F support to talk to any U2F compliant device presented bythe user to enable strong authentication.
             </p>

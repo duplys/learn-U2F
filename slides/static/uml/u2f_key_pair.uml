@@ -17,6 +17,8 @@ skinparam DefaultFontColor White
 skinparam DefaultFontName Rufscript
 skinparam DefaultFontSize 18
 
+skinparam ArrowColor White
+
 class "U2F Device" {
  ...
 }
@@ -27,7 +29,7 @@ class "Key Pair" {
 }
 
 class Origin {
-  www.company.com
+  http://www.company.com
 }
 
 hide Origin circle
