@@ -1,0 +1,40 @@
+@startuml
+
+skinparam backgroundColor transparent
+skinparam handwritten true
+
+skinparam minClassWidth 300
+
+skinparam class {
+  BorderColor White
+  BackgroundColor #111111
+  FontName Ubuntu Monospace
+  FontSize 19
+  FontColor White
+}
+
+skinparam DefaultFontColor White
+skinparam DefaultFontName Ubuntu Monospace
+skinparam DefaultFontSize 17
+
+class "U2F Device" {
+ ...
+}
+
+class "Key Pair" {
+  Public key pub_key
+  Private key priv_key
+}
+
+class Origin {
+  www.company.com
+}
+
+hide Origin circle
+hide "U2F Device" circle
+hide "Key Pair" circle
+
+"U2F Device" *- "Key Pair" : contains >
+"Key Pair" "1" -- "1" Origin : associated with
+
+@enduml
