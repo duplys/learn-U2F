@@ -8,14 +8,14 @@ skinparam minClassWidth 300
 skinparam class {
   BorderColor White
   BackgroundColor #111111
-  FontName Ubuntu Monospace
-  FontSize 19
+  FontName Rufscript
+  FontSize 20
   FontColor White
 }
 
 skinparam DefaultFontColor White
-skinparam DefaultFontName Ubuntu Monospace
-skinparam DefaultFontSize 17
+skinparam DefaultFontName Rufscript
+skinparam DefaultFontSize 18
 
 class "U2F Device" {
  ...
