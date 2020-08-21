@@ -231,7 +231,7 @@
         <section class="bg-apple">
           <div class="wrap">
             <figure>
-              <img class="aligncenter" src="../static/uml/authentication.png" alt="authentication" width="500">
+              <img class="aligncenter" src="../static/uml/authentication.png" alt="authentication">
             </figure>
           </div>
         </section>
@@ -312,6 +312,7 @@
             </div>
         </section>
 
+        <!-- Security of password-based authentication-->
         <section class="bg-apple">
           <div class="wrap">
             <h2>Security of Password-based Authentication</h2>
@@ -327,36 +328,42 @@
           </div>
         </section>
 
+        <!-- Strong passwords needed-->
         <section class="bg-apple aligncenter">
           <div class="wrap">
             <h2><b>Strong</b> passwords needed!</h2>
           </div>
         </section>
 
+        <!-- Examples of strong passwords -->
         <section class="bg-apple aligncenter">
           <div class="wrap">
             <h2>Examples?</h2>
           </div>
         </section>
 
+        <!-- Examples of strong passwords -->
         <section class="bg-apple aligncenter">
           <div class="wrap">
             <h2>tzYjcOnT}XTBt@S+Y0i5o|</h2>
           </div>
         </section>
 
+        <!-- Examples of strong passwords -->
         <section class="bg-apple aligncenter">
           <div class="wrap">
             <h2>'Rt},<|sh:V0F~zi^=@1Jj</h2>
           </div>
         </section>
 
+        <!-- Examples of strong passwords -->
         <section class="bg-apple aligncenter">
           <div class="wrap">
             <h2>G"8J*9Tv)Iw*RW&lx,ZAgY</h2>
           </div>
         </section>
 
+        <!-- Examples of strong passwords -->
         <section class="bg-apple aligncenter">
           <div class="wrap">
             <figure>
@@ -365,6 +372,7 @@
           </div>
         </section>
 
+        <!-- The problem with password-based authentication -->
         <section class="bg-apple">
           <div class="wrap">
             <h2> The Problem with Password-based Authentication</h2>
@@ -374,19 +382,21 @@
           </div>
         </section>
 
+        <!-- Can we improve this? -->
         <section class="bg-apple">
           <div class="wrap">
             <h2>Can We Improve This?</h2>
           </div>
         </section>
 
+        <!-- Yes! With multi-factor authentication -->
         <section class="bg-apple aligncenter">
           <div class="wrap">
             <h2><b>Multi-factor</b> Authentication!</h2>
           </div>
         </section>
 
-        <!-- What is Multi-factor Authentication and Two-factor Authentication? -->
+        <!-- What is multi-factor authentication and two-factor authentication? -->
         <section class="bg-apple">
           <div class="wrap">
             <h2>What is multi-factor authentication?</h2>
@@ -410,6 +420,7 @@
           </div>
         </section>
 
+        <!-- Two-factor authentication and Universal 2nd Factor (U2F) -->
         <section class="bg-apple">
           <div class="wrap">
             <h2>Two-Factor Authentication and Universal 2nd Factor (U2F)</h2>
@@ -733,7 +744,7 @@
           <div class="wrap">
             <h2>U2F: Site-Specific Public/Private Key Pairs</h2>
             <p class="text-intro">
-              The origin check ensures that the public keys and key handles issued by a U2F device to a particular online service or website <b>cannot</b> be used by a different online service or website. This is critical to ensure the user's <b>privacy</b>. If the browser works as it should, a site can verify identity with a user's U2F device <b>only with a key</b> which has been issued to that <b>particular site</b> by that <b>particular U2F device</b>. If this origin check was not present, then a public key and key handle issued by a U2F device could be used as a <b>'supercookie'</b> allowing multiple colluding sites to verify and correlate a particular user's identity.
+              The <b>origin check</b> ensures that the public keys and key handles issued by a U2F device to a particular online service or website <b>cannot</b> be used by a different online service or website. This is critical to ensure the user's <b>privacy</b>. If the browser works as it should, a site can verify identity with a user's U2F device <b>only with a key</b> which has been issued to that <b>particular site</b> by that <b>particular U2F device</b>. If this origin check was not present, then a public key and key handle issued by a U2F device could be used as a <b>'supercookie'</b> allowing multiple colluding sites to verify and correlate a particular user's identity.
             </p>
             <p>
               Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
@@ -761,42 +772,16 @@
           </div>
         </section>
 
-        <!-- FIDO CTAP1/U2F: -->
+        <!-- FIDO CTAP1/U2F: Resilience against man-in-the-middle attacks during authentication -->
         <section class="bg-apple">
           <div class="wrap">
+            <h2>Resilience Against Man-In-The-Middle (MITM) Attacks</h2>
             <p class="text-intro">
-              Man-In-The-Middle Protections During Authentication
-            </p>
-            <p>
-              Say a user has correctly registered a U2F device with an origin and later, a MITM on adifferent origin tries to intermediate the authentication. In this case, the user's U2F devicewon't even respond, since the MITM's (different) origin name will not match the Key Handlethat the MITM is relaying from the actual origin. U2F can also be leveraged to detect moresophisticated MITM situations as we shall see below.
-            </p>
-            <p>
-              As one of the return values of the U2F 'sign' call, the browser returns an object whichcontains information about what the browser sees about the origin (we will call this the'client data' object). This 'client data' includes:
-              <ul>
-                <li>the random challenge sent by the origin</li>
-                <li>the origin host name seen by the browser for the web page making the javascript call, and</li>
-                <li>[optionally] if the ChannelID extension to TLS is used, the connection's channelID public key.</li>
-              </ul>
-            </p>
-            <p>
-              The browser sends a hash of this 'client data' to the U2F device. In addition to the hash ofthe 'client data', as discussed earlier, the browser sends the hash of the origin and the KeyHandle as additional inputs to the U2F device.
-            </p>
-            <p>
-              When the U2F device receives the client data hash, the origin hash and the Key Handle itproceeds as follows: If it had indeed issued that Key Handle for that origin the U2F deviceproceeds to issue a signature across the hashed 'client data' which were sent to it. Thissignature is returned back as another return value of the U2F 'sign' call.
-            </p>
-            <p>
-              The site's web page which made the U2F 'sign' call sends the return values, both the 'clientdata' and the signature, back to the origin site (or equivalently, relying party). On receivingthe 'client data' and the signature, the relying party's first step, of course, is to verify that thesignature matches the data as verified by the user's origin-specific public key. Assuming thismatches, the relying party can examine the 'client data' further to see if any MITM is present.
-            </p>
-            <p>
-              It is still possible to MITM a user's authentication to a site if the MITM is
-              <ul>
+              The U2F device verifies the key handle and the origin verifies the signature produced by the U2F device. However, U2F's security against MITM attacks essentially relies on TLS security. As an example, it is possible to MITM a user's authentication to a site if the MITM is:
+              <ul class="text-intro">
                 <li>able to get a server cert for the actual origin name issued by a valid CA, and</li>
                 <li>ChannelIDs are NOT supported by the browser</li>
               </ul>
-              But this is quite a high bar.
-            </p>
-            <p>
-              An MITM case which the U2F device does NOT protect against is as follows: Consider an online service or website which accepts plain password but allows users to self-register and step up to U2F 2nd factor. An MITM with a different origin which is present between the user and the actual site from the time of registration can register the U2F device on to itself and not pass this registration to the actual origin, which would still see the user as just needing a password. Later, for authentications, the MITM can accept the U2F device and just do an authentication with password to the actual origin.
             </p>
             <p>
               Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
@@ -804,17 +789,15 @@
           </div>
         </section>
 
-        <!-- FIDO CTAP1/U2F: -->
+        <!-- FIDO CTAP1/U2F: Inexpensive U2F devices -->
         <section class="bg-apple">
           <div class="wrap">
+            <h2>Inexpensive U2F Devices</h2>
             <p class="text-intro">
-              Allowing for Inexpensive U2F Devices
+              A key goal of the U2F specification is to enable inexpensive yet secure devices. To achieve this, it is important to allow the U2F devices to have <b>minimal or no onboard memory</b>.
             </p>
-            <p>
-              A key goal of this program is to enable extremely inexpensive yet secure devices. To enablenew secure element chips to be as inexpensive as possible it is important to allow them tohave minimal or no onboard memory.
-            </p>
-            <p>
-              A U2F device allows for this. The Key Handle issued by the U2F device does not have to be an index to the private key stored on board the U2F device secure element chip. Instead, the Key Handle can 'store' (i.e., contain) the private key for the origin and the hash of the origin encrypted with a 'wrapping' key known only to the U2F device secure element. When the Key Handle goes back to the secure element it 'unwraps' it to 'retrieve' the private key and the origin that it was generated for.
+            <p class="text-intro">
+              The key handle issued by the U2F device does <b>not</b> have to be an index to the private key stored on board the U2F device's  secure element chip. Instead, the key handle can store (i.e., contain) the private key for the origin and the hash of the origin encrypted with a 'wrapping' key known only to the U2F device secure element. When the Key Handle goes back to the secure element it 'unwraps' it to 'retrieve' the private key and the origin that it was generated for.
             </p>
             <p>
               As another alternative, the U2F device could store this 'wrapped' information in a table in off-chip memory outside the secure element (which is presumably cheaper). This memory is still on board the U2F device. In this case, the Key Handle sent to the origin would be an index into this table in off-chip memory. As another possibility in the design spectrum, the Key Handle might only encode the origin and an index number, while the private key might still be kept on board - this would, of course, imply the number of keys is limited by the amount of memory.

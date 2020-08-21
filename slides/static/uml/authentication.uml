@@ -8,7 +8,8 @@ skinparam handwritten true
 
 skinparam sequence {
 ArrowColor White
-ArrowFontName Ubuntu Monospace
+ArrowFontName Rufscript
+ArrowFontSize 22
 ArrowFontColor White
   
 LifeLineBorderColor Grey
@@ -16,8 +17,8 @@ LifeLineBackgroundColor #A9DCDF
 
 ParticipantBorderColor White
 ParticipantBackgroundColor #111111
-ParticipantFontName Ubuntu Monospace
-ParticipantFontSize 17
+ParticipantFontName Rufscript
+ParticipantFontSize 24
 ParticipantFontColor White
 }
 
