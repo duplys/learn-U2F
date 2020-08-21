@@ -1,0 +1,55 @@
+@startuml
+
+skinparam backgroundColor transparent
+skinparam handwritten true
+
+skinparam minClassWidth 300
+
+skinparam class {
+  BorderColor White
+  BackgroundColor #111111
+  FontName Rufscript
+  FontSize 24
+  FontColor White
+}
+
+skinparam DefaultFontColor White
+skinparam DefaultFontName Rufscript
+skinparam DefaultFontSize 22
+
+skinparam ArrowColor White
+
+class "U2F Device" {
+ ...
+}
+
+class "Key Pair 1" {
+  Public key pub_key_1
+  Private key priv_key_1
+}
+
+class "Origin 1" {
+  http://www.company.com
+}
+
+class "Key Pair 2" {
+  Public key pub_key_2
+  Private key priv_key_2
+}
+
+class "Origin 2" {
+  http://www.other-company.com
+}
+
+hide "U2F Device" circle
+hide "Origin 1" circle
+hide "Origin 2" circle
+hide "Key Pair 1" circle
+hide "Key Pair 2" circle
+
+"U2F Device" *- "Key Pair 1" : contains >
+"U2F Device" *- "Key Pair 2" : contains >
+"Key Pair 1" "1" -- "1" "Origin 1" : associated with
+"Key Pair 2" "1" -- "1" "Origin 2" : associated with
+
+@enduml

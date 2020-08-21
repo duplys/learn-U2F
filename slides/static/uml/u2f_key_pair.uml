@@ -9,13 +9,13 @@ skinparam class {
   BorderColor White
   BackgroundColor #111111
   FontName Rufscript
-  FontSize 20
+  FontSize 24
   FontColor White
 }
 
 skinparam DefaultFontColor White
 skinparam DefaultFontName Rufscript
-skinparam DefaultFontSize 18
+skinparam DefaultFontSize 22
 
 skinparam ArrowColor White
 

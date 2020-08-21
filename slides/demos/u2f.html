@@ -376,7 +376,7 @@
 
         <section class="bg-apple">
           <div class="wrap">
-            <h2>Is there a way to improve this?</h2>
+            <h2>Can We Improve This?</h2>
           </div>
         </section>
 
@@ -399,7 +399,7 @@
               </ul>
             </p>
             <p class="text-intro">
-              One specific type of multi-factor authentication is the <b>Two-factor</b> Authentication (2FA). 2FA is an authentication method that uses some combination of <i>two</i> different factors (typically, something the user knows and something the user has).
+              One specific type of multi-factor authentication is the <b>Two-factor Authentication</b> (<b>2FA</b>). 2FA is an authentication method that uses some combination of <b>two</b> different factors (typically, something the user knows and something the user has).
             </p>
             <br>
             <br>
@@ -410,15 +410,21 @@
           </div>
         </section>
 
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Two-Factor Authentication and Universal 2nd Factor (U2F)</h2>
+          </div>
+        </section>
+
         <!-- What is Universal 2nd Factor (U2F)?-->
         <section class="bg-apple">
          <div class="wrap">
            <h2>Universal 2nd Factor (U2F)</h2>
            <p class="text-intro">
-            U2F is an <b>open authentication standard</b> that strengthens and simplifies 2FA by enabling internet users to securely access any number of online services with <b>one</b> single security key &ndash; specialized Universal Serial Bus (USB) or Near-Field Communication (NFC) device &ndash; instantly and with <b>no</b> drivers or client software needed.
+            U2F is an <b>open authentication standard</b> that implements 2FA. It enables internet users to securely access any number of online services with <b>one</b> single security key &ndash; specialized Universal Serial Bus (USB) or Near-Field Communication (NFC) device &ndash; instantly and with <b>no</b> drivers or client software needed.
            </p>
            <p class="text-intro">
-            The U2F standard is hosted and maintained by the <a href="https://fidoalliance.org/">FIDO ("Fast IDentity Online") Alliance</a>, an open industry association launched in February 2013 with the goal to develop and promote authentication standards that help reduce the over-reliance on passwords. FIDO alliance has 260+ members including companies like Apple, Google, Facebook, Amazon,  Intel, Infineon, Visa, American Express, and Samsung. 
+            The U2F standard is hosted and maintained by the <a href="https://fidoalliance.org/">FIDO ("Fast IDentity Online") Alliance</a>, an open industry association launched in 2013 to develop and promote authentication standards that help reduce the over-reliance on passwords. FIDO Alliance has 260+ members including companies like Apple, Google, Facebook, Amazon,  Intel, Infineon, Visa, American Express, and Samsung. 
            </p>
            <br>
            <br>
@@ -502,6 +508,21 @@
           </div>
          </section>
 
+        <!-- Illustration of FIDO UAF protocol -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <figure>
+              <img class="bg-light aligncenter" src="../static/images/FIDO_UAF.png" alt="scream" width="1200">
+            </figure>
+            <br>
+            <br>
+            <br>
+            <p>
+             Source: <a href="https://www.yubico.com/authentication-standards/fido-u2f/">Yubico "FIDO U2F"</a>.
+            </p>
+          </div>
+        </section>
+
         <!-- The FIDO 2nd Factor (U2F) Protocol -->
         <section class="bg-apple">
           <div class="wrap">
@@ -514,6 +535,21 @@
             <br>
             <p>
               Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- Illustration of CTAP1/U2F protocol -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <figure>
+              <img class="bg-light aligncenter" src="../static/images/FIDO_U2F.png" alt="scream" width="1200">
+            </figure>
+            <br>
+            <br>
+            <br>
+            <p>
+             Source: <a href="https://www.yubico.com/authentication-standards/fido-u2f/">Yubico "FIDO U2F"</a>.
             </p>
           </div>
         </section>
@@ -533,21 +569,6 @@
             <br>
             <p>
               Sources: <a href="https://fidoalliance.org/specifications/">FIDO Alliance. <i>Specifications Overview</i></a> and <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.pdf">FIDO Alliance. <i>Client to Authenticator Protocol (CTAP)</i></a>.
-            </p>
-          </div>
-        </section>
-
-        <!-- Illustration of CTAP1/U2F protocol -->
-        <section class="bg-apple">
-          <div class="wrap">
-            <figure>
-              <img class="bg-light aligncenter" src="../static/images/FIDO_U2F.png" alt="scream" width="1200">
-            </figure>
-            <br>
-            <br>
-            <br>
-            <p>
-             Source: <a href="https://www.yubico.com/authentication-standards/fido-u2f/">Yubico "FIDO U2F"</a>.
             </p>
           </div>
         </section>
@@ -578,8 +599,7 @@
           </div>
          </section>
 
-                <!-- continue here -->
-
+        <!-- FIDO CTAP1/U2F: U2F devices -->
         <section class="bg-apple">
           <div class="wrap">
             <h2>U2F: Strong Authentication and Privacy for the Web</h2>
@@ -589,25 +609,29 @@
             <ul class="flexblock metrics">
               <li> 
                 <figure>
-                  <img class="bg-light aligncenter" src="../static/images/yubico-standard.png" alt="scream" width="300" style="border-radius: 50%">
+                  <img class="bg-light aligncenter" src="../static/images/yubico-standard.png" alt="scream" width="250" style="border-radius: 50%">
                 </figure>
               </li>
               <li>
                 <figure>
-                  <img class="bg-light aligncenter" src="../static/images/yubico-usb-c.png" alt="scream" width="300" style="border-radius: 50%">
+                  <img class="bg-light aligncenter" src="../static/images/yubico-usb-c.png" alt="scream" width="250" style="border-radius: 50%">
                 </figure>
               </li>
               <li>
                 <figure>
-                  <img class="bg-light aligncenter" src="../static/images/yubico-series-5.png" alt="scream" width="300" style="border-radius: 50%">
+                  <img class="bg-light aligncenter" src="../static/images/yubico-series-5.png" alt="scream" width="250" style="border-radius: 50%">
                 </figure>
             </ul>
+            <p class="text-intro">
+              The U2F device can be embodied in various form factors, such as stand alone USB devices, stand alone Near Field Communication (NFC) devices, stand alone Bluetooth LE devices, built-on-board the user's client machine/mobile device as pure software or utilizing secured crypto capabilities. It is strongly preferable to have hardware backed security.
+            </p>
             <p>
               Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
             </p>
           </div>
         </section>
 
+        <!-- FIDO CTAP1/U2F: U2F registration -->
         <section class="bg-apple">
           <div class="wrap">
             <h2>U2F: Strong Authentication and Privacy for the Web</h2>
@@ -616,7 +640,7 @@
             </p>
             <p>
               <figure>
-                <img class="aligncenter" src="../static/uml/u2f_key_pair.png" alt="scream" width="1200">
+                <img class="aligncenter" src="../static/uml/u2f_key_pair.png" alt="U2F key pair">
               </figure>
             </p>
             <p>
@@ -625,38 +649,17 @@
           </div>
         </section>
 
-        <section class="bg-apple">
-          <div class="wrap">
-            <h2>U2F: Strong Authentication and Privacy for the Web</h2>
-            <p>
-              The user is able to use the same device across multiple sites on the web - it thus serves asthe user's physical web keychain with multiple (virtual) keys to various sites provisionedfrom one physical device. Using the open U2F standard, any origin will be able to use anybrowser (or OS) which has U2F support to talk to any U2F compliant device presented bythe user to enable strong authentication.
-            </p>
-            <p>
-              The U2F device registration and authentication operations are exposed through JavaScriptAPIs built into the browser and, in following phases, native APIs in mobile OSes.
-            </p>
-            <p>
-              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
-            </p>
-          </div>
-        </section>
-
+        <!-- FIDO CTAP1/U2F: Same device across multiple services (key pairs - origins mapping) -->
         <section class="bg-apple">
           <div class="wrap">
             <h2>U2F: Strong Authentication and Privacy for the Web</h2>
             <p class="text-intro">
-              Goal: 
+              The user is able to use the <b>same device across multiple web services</b>: it serves as the user's physical web key chain with multiple keys to various sites provisioned from one physical device. Using the open U2F standard, any origin can use any U2F-compliant browser (or OS) to talk to any U2F compliant device.
             </p>
             <p>
-              The U2F eco-system is designed to provide strong authentication for users on the web while preserving the user's privacy. The user carries a 'U2F device' as a second factor.
-            </p>
-            <p>
-              When the user registers the U2F device at an account at a particular origin (such as http://www.company.com) the device creates a new key pair usable only at that origin and gives the origin the public key to associate with the account. When the user authenticates (i.e., logs in) to the origin, in addition to username and password, the origin (in this case, http://www.company.com) can check whether the user has the U2F device by verifying a signature created by the device.
-            </p>
-            <p>
-              The user is able to use the same device across multiple sites on the web - it thus serves asthe user's physical web keychain with multiple (virtual) keys to various sites provisionedfrom one physical device. Using the open U2F standard, any origin will be able to use anybrowser (or OS) which has U2F support to talk to any U2F compliant device presented bythe user to enable strong authentication.
-            </p>
-            <p>
-              The U2F device registration and authentication operations are exposed through JavaScriptAPIs built into the browser and, in following phases, native APIs in mobile OSes.
+              <figure>
+                <img class="aligncenter" src="../static/uml/u2f_keys_origins.png" alt="scream">
+              </figure>
             </p>
             <p>
               Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
@@ -664,17 +667,42 @@
           </div>
         </section>
 
-
+        <!-- FIDO CTAP1/U2F: Same device across multiple services (key pairs - origins mapping) -->
         <section class="bg-apple">
           <div class="wrap">
+            <h2>U2F: Strong Authentication and Privacy for the Web</h2>
             <p class="text-intro">
-              Goal: Strong Authentication and Privacy for the Web
+              The U2F device registration and authentication operations are exposed through JavaScript APIs built into the browser and native APIs in mobile OSes.
+            </p>
+            <ul class="flexblock metrics">
+              <li> 
+                <figure>
+                  <img class="aligncenter" src="../static/images/u2f_lib_sign.png" alt="scream">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img class="aligncenter" src="../static/images/u2f_sign_code.png" alt="scream">
+                </figure>
+              </li>
+            </ul>
+            <p>
+              Source: <a href="https://developers.yubico.com/U2F/Libraries/Using_a_library.html">dev.yubico <i>Using a U2F Library</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: User registration -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>U2F: Site-Specific Public/Private Key Pairs</h2>
+            <p class="text-intro">
+              At the core of the protocol, the U2F device has a capability (ideally, embodied in a secure element) to generate an <b>origin-specific public/private key pair</b>. During <b>user registration</b>, the browser sends the U2F device a <b>hash of the origin (combination of protocol, hostname and port)</b>; the U2F device returns a <b>public key</b> and a <b>key handle</b>. Very importantly, the U2F device <b>encodes the requesting origin into the key handle</b>. Finally, the browser sends the public key and the key handle to the origin online service or website.
             </p>
             <p>
-              The U2F device can be embodied in various form factors, such as stand alone USBdevices, stand alone Near Field Communication (NFC) device, stand alone Bluetooth LEdevices, built-on-board the user's client machine/mobile device as pure software or utilizingsecured crypto capabilities. It is strongly preferable to have hardware backed security
-            </p>
-            <p>
-              The specs for U2F are in two layers. The upper layer specifies the cryptographic core of theprotocol. The lower layer specifies how the user's client will communicate U2Fcryptographic requests to the U2F device over a particular transport protocol (e.g., USB,NFC, Bluetooth LE, built-in on a particular OS, etc.).
+              <figure>
+                <img class="aligncenter" src="../static/images/face-scream.png" alt="U2F key pair">
+              </figure>
             </p>
             <p>
               Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
@@ -682,25 +710,17 @@
           </div>
         </section>
 
+        <!-- FIDO CTAP1/U2F: Use authentication -->
         <section class="bg-apple">
           <div class="wrap">
+            <h2>U2F: Site-Specific Public/Private Key Pairs</h2>
             <p class="text-intro">
-              Site-Specific Public/Private Key Pairs
+              Later, when the user performs an authentication, the origin online service or website sends the user's key handle and a nonce (challenge) to the browser. The browser, in turn, sends this key handle, the nonce, and the hash of the origin which is requesting the authentication to the U2F device. The U2F device first <b>verifies</b> it had issued this key handle to that particular origin, then uses the <b>key handle to identify the user's private key</b>, and <b>creates a signature</b> (using the nonce) which is sent back to the origin (via the browser) to <b>verify the presence of the U2F device</b>. Thus, the key handle is simply an <b>identifier of a particular key on the U2F device</b>.
             </p>
             <p>
-              At the core ofthe protocol, the U2F device has a capability (ideally, embodied in a secure element) whichmints an origin-specific public/private key pair. The U2F device gives the public key and aKey Handle to the origin online service or website during the user registration step.
-            </p>
-            <p>
-              Later, when the user performs an authentication, the origin online service or website sendsthe Key Handle back to the U2F device via the browser. The U2F device uses the KeyHandle to identify the user's private key, and creates a signature which is sent back to theorigin to verify the presence of the U2F device. Thus, the Key Handle is simply an identifierof a particular key on the U2F device.
-            </p>
-            <p>
-              The key pair created by the U2F device during registration is origin specific. Duringregistration, the browser sends the U2F device a hash of the origin (combination of protocol,hostname and port). The U2F device returns a public key and a Key Handle. Veryimportantly, the U2F device encodes the requesting origin into the Key Handle.
-            </p>
-            <p>
-              Later, when the user attempts to authenticate, the server sends the user's Key Handle backto the browser. The browser sends this Key Handle and the hash of the origin which isrequesting the authentication. The U2F device ensures that it had issued this Key Handle tothat particular origin hash before performing any signing operation. If there is a mismatch nosignature is returned.
-            </p>
-            <p>
-              This origin check ensures that the public keys and Key Handles issued by a U2F device to aparticular online service or website cannot be exercised by a different online service orwebsite (i.e., a site with a different name on a valid SSL certificate). This is a critical privacyproperty - assuming the browser is working as it should, a site can verify identity stronglywith a user's U2F device only with a key which has been issued to that particular site by thatparticular U2F device. If this origin check was not present, a public key and Key Handleissued by a U2F device could be used as a 'supercookie' which allows multiple colludingsites to strongly verify and correlate a particular user's identity.
+              <figure>
+                <img class="aligncenter" src="../static/images/face-scream.png" alt="U2F key pair">
+              </figure>
             </p>
             <p>
               Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
@@ -708,24 +728,40 @@
           </div>
         </section>
 
+        <!-- FIDO CTAP1/U2F: Rationale behind the origin check -->
         <section class="bg-apple">
           <div class="wrap">
+            <h2>U2F: Site-Specific Public/Private Key Pairs</h2>
             <p class="text-intro">
-              Alerting the User: U2F Device 'activation' & Browser Infobars
+              The origin check ensures that the public keys and key handles issued by a U2F device to a particular online service or website <b>cannot</b> be used by a different online service or website. This is critical to ensure the user's <b>privacy</b>. If the browser works as it should, a site can verify identity with a user's U2F device <b>only with a key</b> which has been issued to that <b>particular site</b> by that <b>particular U2F device</b>. If this origin check was not present, then a public key and key handle issued by a U2F device could be used as a <b>'supercookie'</b> allowing multiple colluding sites to verify and correlate a particular user's identity.
             </p>
             <p>
-              The U2F device device has a physical 'test of user presence'. The user touches a button (orsensor of some kind) to 'activate' the U2F device and this feeds into the device's operationas follows:
-              <ul>
-                <li>Registration: The U2F device responds to a request to generate a key pair only if ithas been 'activated'. Separately, the browser implementation might ensure that thejavascript 'ask the U2F device to issue a key pair' call always results in the user seeingan infobar dialog which asks if he/she indeed wants to allow the current site to registerthe U2F device.</li>
-              <li>Authentication: During authentication, the browser sends some data down to the U2Fdevice that it needs to sign (more about this later). The U2F device can be requestedto require a 'test of user presence' before it will sign - e.g., the user has to press abutton on the device. This ensures that a signature happens only with the user's permission. It also ensures that that malware cannot exercise the signature when theuser is not present.</li>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Alerting the user -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Alerting the User: U2F Device Activation & Browser Infobars</h2>
+            <p class="text-intro">
+              Every U2F device has a <b>physical user presence test</b>. The user touches a button (or a sensor of some other kind) to <b>activate</b> the U2F device:
+              <ul class="text-intro">
+                <li>During registration, the U2F device responds to a request to generate a key pair only if it has been activated. In addition, the browser might display an infobar asking the user whether she/he wants to allow the current site to register the U2F device.</li>
+              <li>During authentication, the browser sends data to the U2F device that it needs to sign. The U2F device can be requested to require a test of user presence before it will sign. This ensures that a signature happens only with the user's permission and that malware cannot invoke the signature generation when the user is not present.</li>
               </ul>
             </p>
+            <br>
+            <br>
+            <br>
             <p>
               Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
             </p>
           </div>
         </section>
 
+        <!-- FIDO CTAP1/U2F: -->
         <section class="bg-apple">
           <div class="wrap">
             <p class="text-intro">
@@ -768,6 +804,7 @@
           </div>
         </section>
 
+        <!-- FIDO CTAP1/U2F: -->
         <section class="bg-apple">
           <div class="wrap">
             <p class="text-intro">
@@ -788,6 +825,7 @@
           </div>
         </section>
 
+        <!-- FIDO CTAP1/U2F: -->
         <section class="bg-apple">
           <div class="wrap">
             <p class="text-intro">
@@ -808,6 +846,7 @@
           </div>
         </section>
 
+        <!-- FIDO CTAP1/U2F: -->
         <section class="bg-apple">
           <div class="wrap">
             <p class="text-intro">
@@ -824,44 +863,8 @@
             </p>
           </div>
         </section>
-
-        <section class="bg-apple">
-          <div class="wrap">
-            <p class="text-intro">
-              Registration: Creating a Key Pair
-            </p>
-            <p>
-              The to-be-registered user is verified by the origin site (e.g., with username and password). The registration page rendered by the origin in the browser calls the javascript function for creating a key pair. When the javascript function is called, the user may see a browser infobar warning which he/she has to approve. After user approval, the key pair generation request is sent to every U2F device attached to the computer.
-            </p>
-            <p>
-              The first U2F device attached to the computer which has a positive 'test of user presence'(i.e., the first attached U2F device on which the user presses the button) responds to this request. The browser packages the response from the U2F device (key handle, public key,etc.) and returns it to the web page as return results of the javascript function call. The registration web page sends these to the origin site and the origin sites stores this information indexed by the user's account to complete the registration process.
-            </p>
-            <p>
-              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
-            </p>
-          </div>
-        </section>
         
-        <section class="bg-apple">
-          <div class="wrap">
-            <p class="text-intro">
-              Authentication: Generating a Signature
-            </p>
-            <p>
-              The user starts the authentication process typically with username and password (or withjust the username, if the site only wants a U2F device verification). The origin site rendersan intermediate authentication page into which it sends the user's Key Handle and a nonce.It then calls the javascript function to create a signature. The parameters for the function callare the Key Handle and the nonce.
-            </p>
-            <p>
-              When the signature function is called, the browser may show an infobar asking for the user's approval (the user may choose to ask the browser to skip this in future). After theuser's approval, the browser talks to all the U2F devices attached to the computer asdescribed earlier and assembles their responses.
-            </p>
-            <p>
-              The javascript function call returns the 'client data' object and the first signature response from a U2F device that replied. The intermediate authentication web page sends the 'clientdata' and the U2F device responses on to the relying party, which determines if any of the signatures matches what it expects.
-            </p>
-            <p>
-              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
-            </p>
-          </div>
-        </section>
-
+        <!-- FIDO CTAP1/U2F: -->
         <section class="bg-apple">
           <div class="wrap">
             <p class="text-intro">
@@ -879,6 +882,7 @@
           </div>
         </section>
 
+        <!-- FIDO CTAP1/U2F: -->
         <section class="bg-apple">
           <div class="wrap">
             <p class="text-intro">
@@ -905,7 +909,7 @@
         <section class="bg-apple">
           <div class="wrap">
             <figure>
-              <img class="aligncenter" src="../static/uml/u2f_authentication.png" alt="U2F authentication" width="800">
+              <img class="aligncenter" src="../static/uml/u2f_authentication.png" alt="U2F authentication">
             </figure>
           </div>
         </section>
@@ -924,30 +928,13 @@
           </div>
         </section>
 
+        <!-- FIDO CTAP1/U2F: Interactive part -->
         <section class="bg-apple">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/cckf4TsHAuw/')"></span>
           <div class="wrap">
-            <h1>END OF MY PRESENTATION</h1>
+            <h2>Interactive Part</h2>  
           </div>
         </section>
-
-        <section class="bg-apple">
-          <div class="wrap">
-            <h2>Title</h2>
-            <p class="text-intro">
-              Some text
-            </p>
-          </div>
-        </section>
-
-        <section class="bg-apple">
-          <div class="wrap">
-            <h2>Title</h2>
-            <p class="text-intro">
-              Some text
-            </p>
-          </div>
-        </section>
-
 
 
         <section class="bg-apple aligncenter">
