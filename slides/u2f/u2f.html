@@ -120,8 +120,8 @@
             <ul class="text-intro">
               <li>Why Authentication?</li>
               <li>What is Authentication?</li>
-              <li></li>
-              <li></li>
+              <li>What is Multifactor Authentication?</li>
+              <li>What is Universal 2nd Factor?</li>
             </ul>
           </div>
         </section>
@@ -703,7 +703,7 @@
           </div>
         </section>
 
-        <!-- FIDO CTAP1/U2F: User registration -->
+        <!-- FIDO CTAP1/U2F: Site-Specific Public/Private Key Pairs -->
         <section class="bg-apple">
           <div class="wrap">
             <h2>U2F: Site-Specific Public/Private Key Pairs</h2>
@@ -712,7 +712,7 @@
             </p>
             <p>
               <figure>
-                <img class="aligncenter" src="../static/images/face-scream.png" alt="U2F key pair">
+                <img class="aligncenter" src="../static/uml/u2f_site-specific-keys.png" alt="U2F key pair">
               </figure>
             </p>
             <p>
@@ -721,7 +721,7 @@
           </div>
         </section>
 
-        <!-- FIDO CTAP1/U2F: Use authentication -->
+        <!-- FIDO CTAP1/U2F: Site-Specific Public/Private Key Pairs -->
         <section class="bg-apple">
           <div class="wrap">
             <h2>U2F: Site-Specific Public/Private Key Pairs</h2>
@@ -730,7 +730,7 @@
             </p>
             <p>
               <figure>
-                <img class="aligncenter" src="../static/images/face-scream.png" alt="U2F key pair">
+                <img class="aligncenter" src="../static/uml/u2f_site-specific-keys-part2.png" alt="U2F key pair">
               </figure>
             </p>
             <p>
@@ -745,6 +745,11 @@
             <h2>U2F: Site-Specific Public/Private Key Pairs</h2>
             <p class="text-intro">
               The <b>origin check</b> ensures that the public keys and key handles issued by a U2F device to a particular online service or website <b>cannot</b> be used by a different online service or website. This is critical to ensure the user's <b>privacy</b>. If the browser works as it should, a site can verify identity with a user's U2F device <b>only with a key</b> which has been issued to that <b>particular site</b> by that <b>particular U2F device</b>. If this origin check was not present, then a public key and key handle issued by a U2F device could be used as a <b>'supercookie'</b> allowing multiple colluding sites to verify and correlate a particular user's identity.
+            </p>
+            <p>
+              <figure>
+                <img class="aligncenter" src="../static/uml/u2f_site-specific-keys-part3.png" alt="U2F key pair">
+              </figure>
             </p>
             <p>
               Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
@@ -865,6 +870,7 @@
         <!-- FIDO CTAP1/U2F: Putting it all together -->
         <section class="bg-apple">
           <div class="wrap">
+            <h2>Putting it all Together: U2F Authentication</h2>
             <figure>
               <img class="aligncenter" src="../static/uml/u2f_authentication.png" alt="U2F authentication">
             </figure>

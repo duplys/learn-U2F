@@ -1,0 +1,36 @@
+@startuml
+
+skinparam backgroundColor transparent
+skinparam handwritten true
+
+skinparam minClassWidth 300
+
+skinparam class {
+  BorderColor White
+  BackgroundColor #111111
+  FontName Rufscript
+  FontSize 24
+  FontColor White
+}
+
+skinparam DefaultFontColor White
+skinparam DefaultFontName Rufscript
+skinparam DefaultFontSize 22
+
+skinparam ArrowColor White
+
+class "Key Pair" {
+  Public key pub_key
+  Private key priv_key
+}
+
+class Origin {
+  http://www.company.com
+}
+
+hide Origin circle
+hide "Key Pair" circle
+
+"Key Pair" "1" -- "1" Origin : associated with
+
+@enduml
