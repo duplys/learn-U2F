@@ -106,8 +106,8 @@
             <h1>Who Am I?</h1>
             <ul class="text-intro">
               <li>Computer scientist by education (University of Tuebingen)</li>
-              <li>Information security researcher (PhD in Side Channel Analysis, 12+ years working on various security topics)</li>
-              <li>Senior manager "Safety, Security & Privacy" group @ Bosch Corporate Research</li>
+              <li>Information security researcher (PhD in Side Channel Analysis, 14+ years working on various security topics)</li>
+              <li>Senior manager "Reliable Distributed Systems" cluster @ Bosch Corporate Research</li>
               <li>Program lead "Security, Privacy & Safety" @ Bosch Corporate Research</li>
             </ul>
           </div>
@@ -241,7 +241,7 @@
           <div class="wrap">
             <blockquote class="text-quote">
               <p>
-                The most common technique is by the verifier checking the correctness of a message (possibly in response to an earlier message) which demonstrates that the claimant is in possesion of a <b>secret associated by design with the genuine party</b>.
+                The most common technique is the verifier checking the correctness of a message (possibly in response to an earlier message) which demonstrates that the claimant is in possesion of a <b>secret associated by design with the genuine party</b>.
               </p>
             </blockquote>
             <br>
@@ -450,7 +450,7 @@
         <section class="bg-apple">
           <span class="background dark" style="background-image:url('https://source.unsplash.com/ub1sSvJ_Tbs/')"></span>
           <div class="wrap">
-            <h2>FIDO, FIDO2, UAF, U2F, and CTAP</h2>
+            <h2>FIDO Alliance, FIDO2, UAF, U2F, and CTAP</h2>
           </div>
          </section>
 
@@ -459,12 +459,9 @@
           <div class="wrap">
             <blockquote class="text-quote">
               <p>
-                The FIDO Alliance mission is to change the nature of online strong authentication.
+                The <b>FIDO Alliance</b> mission is to change the nature of online strong authentication.
               </p>
             </blockquote>
-            <p class="text-intro">
-              <b>FIDO Alliance</b>'s primary objective is to enable online services and websites, whether on the open internet or within enterprises, to leverage native security features of end-user computing devices for strong user authentication and to reduce the problems associated with creating and remembering many online credentials.
-            </p>
             <br>
             <br>
             <br>
@@ -490,7 +487,7 @@
               Together, these specifications are known as <b>FIDO 2</b>.
             </p>
             <p class="text-intro">
-              FIDO2 supports <b>passwordless</b>, <b>second-factor</b> and <b>multi-factor</b> authentication with embedded (or bound) authenticators (such as biometrics or PINs) or external (or roaming) authenticators (such as FIDO Security Keys, mobile devices, wearables, etc). The complementary <b>W3C's WebAuthn</b> specification defines a <b>standard web API</b> that is being built into browsers and platforms to enable support for FIDO Authentication.
+              FIDO2 supports <b>passwordless</b>, <b>second-factor</b> and <b>multi-factor</b> authentication with embedded authenticators (such as biometrics or PINs) or external authenticators (such as FIDO Security Keys, mobile devices, wearables, etc). The complementary <b>W3C's WebAuthn</b> specification defines a <b>standard web API</b> built into browsers and platforms to support FIDO Authentication.
             </p>
             <br>
             <br>
@@ -539,7 +536,7 @@
           <div class="wrap">
             <h2>FIDO Universal 2nd Factor (U2F) Protocol</h2>
             <p class="text-intro">
-              The <b>Universal 2nd Factor (U2F) Protocol</b> allows online services to augment the security of their existing password infrastructure by adding a strong second factor to user login. The user logs in with a username and password as before. The service can also prompt the user to present a second factor device at any time it chooses.
+              The <b>Universal 2nd Factor (U2F) Protocol</b> allows online services to augment the security of their existing password infrastructure by adding a <b>strong second factor</b> to user login. The user logs in with a username and password as before. The service can also prompt the user to present a second factor device at any time it chooses.
             </p>
             <br>
             <br>
@@ -570,10 +567,7 @@
           <div class="wrap">
             <h2>FIDO CTAP1/U2F Protocol</h2>
             <p class="text-intro">
-              U2F predates FIDO2. With the release of FIDO2 specification, U2F became part of the FIDO2 CTAP specification and was <b>relabeled CTAP1</b> (or <b>CTAP1/U2F</b>). The CTAP1/U2F protocol allows the use of existing FIDO U2F devices (such as FIDO Security Keys) for a <b>second-factor</b> authentication on FIDO2-enabled browsers and operating systems over USB, NFC, or BLE.
-            </p>
-            <p class="text-intro">
-              CTAP1/U2F is defined by the U2F Raw Messages specification. The CTAP1/U2F messages have an APDU-like binary structure. CTAP1/U2F may also be referred to as CTAP 1.2 or U2F 1.2. The latter was the U2F specification version used as the basis for several portions of the CTAP1 specification.
+              U2F predates FIDO2. With release of FIDO2 specification, U2F was relabeled <b>CTAP1/U2F</b>. The CTAP1/U2F protocol allows the use of existing FIDO U2F devices (such as FIDO Security Keys) for a <b>second-factor</b> authentication on FIDO2-enabled browsers and operating systems over USB, NFC, or BLE.
             </p>
             <br>
             <br>
@@ -583,25 +577,6 @@
             </p>
           </div>
         </section>
-
-        <!-- FIDO CTAP2 Protocol -->
-        <section class="bg-apple">
-          <div class="wrap">
-            <h2>FIDO CTAP2 Protocol</h2>
-            <p class="text-intro">
-              The CTAP2 protocol allows the use of external authenticators (FIDO Security Keys, mobile devices) for authentication on FIDO2-enabled browsers and operating systems over USB, NFC, or BLE for a <b>passwordless</b>, second-factor or <b>multi-factor</b> authentication.
-            </p>
-            <p class="text-intro">
-              Unlike CTAP1, the CTAP2 protocol messages are encoded in the CTAP2 canonical <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.pdf#%06%1BqZ5%B4%E0/%5BMK%F4%173T%DFctap2-canonical-cbor-encoding-form">CBOR encoding form</a>. But both CTAP1/U2F and CTAP2 share the same underlying transports: USB Human Interface Device (USB HID), Near Field Communication (NFC), and Bluetooth Smart / Bluetooth Low Energy (BLE).
-            </p>
-            <br>
-            <br>
-            <br>
-            <p>
-              Source: <a href="https://fidoalliance.org/specifications/">FIDO Alliance. <i>Specifications Overview</i></a>
-            </p>
-          </div>
-         </section>
 
         <!-- FIDO CTAP1/U2F -->
         <section class="bg-apple">
@@ -757,90 +732,12 @@
           </div>
         </section>
 
-        <!-- FIDO CTAP1/U2F: Alerting the user -->
-        <section class="bg-apple">
-          <div class="wrap">
-            <h2>Alerting the User: U2F Device Activation & Browser Infobars</h2>
-            <p class="text-intro">
-              Every U2F device has a <b>physical user presence test</b>. The user touches a button (or a sensor of some other kind) to <b>activate</b> the U2F device:
-              <ul class="text-intro">
-                <li>During registration, the U2F device responds to a request to generate a key pair only if it has been activated. In addition, the browser might display an infobar asking the user whether she/he wants to allow the current site to register the U2F device.</li>
-              <li>During authentication, the browser sends data to the U2F device that it needs to sign. The U2F device can be requested to require a test of user presence before it will sign. This ensures that a signature happens only with the user's permission and that malware cannot invoke the signature generation when the user is not present.</li>
-              </ul>
-            </p>
-            <br>
-            <br>
-            <br>
-            <p>
-              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
-            </p>
-          </div>
-        </section>
-
-        <!-- FIDO CTAP1/U2F: Resilience against man-in-the-middle attacks during authentication -->
-        <section class="bg-apple">
-          <div class="wrap">
-            <h2>Resilience Against Man-In-The-Middle (MITM) Attacks</h2>
-            <p class="text-intro">
-              The U2F device verifies the key handle and the origin verifies the signature produced by the U2F device. However, U2F's security against MITM attacks essentially relies on TLS security. As an example, it is possible to MITM a user's authentication to a site if the MITM is:
-              <ul class="text-intro">
-                <li>able to get a server cert for the actual origin name issued by a valid CA, and</li>
-                <li>ChannelIDs are NOT supported by the browser</li>
-              </ul>
-            </p>
-            <p>
-              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
-            </p>
-          </div>
-        </section>
-
-        <!-- FIDO CTAP1/U2F: Inexpensive U2F devices -->
-        <section class="bg-apple">
-          <div class="wrap">
-            <h2>Inexpensive U2F Devices</h2>
-            <p class="text-intro">
-              A key goal of the U2F specification is to enable inexpensive yet secure devices. To achieve this, U2F devices have <b>minimal or no on-chip memory</b>.
-            </p>
-            <p class="text-intro">
-              The key handle does <b>not</b> have to be an index to the private key stored on the U2F device. Instead, the key handle can store (i.e., contain) the private key for the origin and the hash of the origin encrypted with a wrapping key known only to the U2F device secure element. When the key handle is passed to the U2F device, it unwraps it to retrieve the private key and the origin that it was generated for.
-            </p>
-            <p class="text-intro">
-              Alternatively, the U2F device can store the wrapped information in a table in off-chip memory. In this case, the key handle would be an index into this table in off-chip memory.
-            </p>
-            <p>
-              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
-            </p>
-          </div>
-        </section>
-
         <!-- FIDO CTAP1/U2F: Verifying the genuineness of U2F devices -->
         <section class="bg-apple">
           <div class="wrap">
             <h2>Verifying the Genuineness of U2F Devices</h2>
             <p class="text-intro">
-              A U2F device must be certified by a certification authority to ensure that it uses strong cryptography and is properly implemented. The origin needs to able to identify the type of U2F device it is speaking to so it can verify that the U2F device type has the <b>desired characteristics</b>. For example, a financial services site may choose to only accept hardware-backed U2F devices, while some other site may allow U2F devices implemented in software.  
-            </p>
-            <p class="text-intro">
               Every U2F device has a shared <b>attestation key pair</b> present on it. This key is shared across a large number of U2F device units made by the same vendor (this is to prevent individual identifiability of the U2F device). The attestation key is used to sign messages during the registration step of the U2F device.
-            </p>
-            <br>
-            <br>
-            <br>
-            <p>
-              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
-            </p>
-          </div>
-        </section>
-
-        <!-- FIDO CTAP1/U2F: Counters for Additional Protection -->
-        <section class="bg-apple">
-          <div class="wrap">
-            <h2>Counters for Additional Protection</h2>
-            <p class="text-intro">
-              The U2F protocol incorporates a <b>usage counter</b> to allow the origin to detect problems in some circumstances. The U2F device stores the <b>number of signature operations</b> it has performed (either per key pair, per set of keys, or globally). The U2F device sends the actual counter value back to the browser which relays it to the origin after every signing operation. The U2F device also <b>concatenates</b> the counter value on to the <b>hash</b> of the client data before signing so that the origin can strongly verify that the counter value was not tampered with (by the browser).
-            </p>
-            <p class="text-intro">
-              The server compares the counter value received from the U2F device to a stored counter value from earlier interactions with the same U2F device. If the counter value has moved backward, it would signal that there is more than one U2F device with the same key pair for the origin (i.e., a clone of the U2F device has been created at some point).
             </p>
             <br>
             <br>

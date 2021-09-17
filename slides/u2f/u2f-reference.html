@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CLEAN MARKUP = GOOD KARMA.
+      Hi source code lover,
+
+      you're a curious person and a fast learner ;)
+      Let's make something beautiful together. Contribute on Github:
+      https://github.com/webslides/webslides
+
+      Thanks!
+    -->
+
+    <!-- SEO -->
+    <title>Authentication using Universal 2nd Factor</title>
+    <meta name="description" content="WebSlides is the easiest way to make HTML presentations. Just essential features, clean code, and lovely CSS.">
+
+    <!-- URL CANONICAL -->
+    <!-- <link rel="canonical" href="http://your-url.com/permalink"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" type='text/css' media='all' href="../static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/svg-icons.css">
+
+    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+
+    <!-- FACEBOOK -->
+    <meta property="og:url" content="http://your-url.com/permalink"> <!-- EDIT -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Make a Keynote presentation using HTML"> <!-- EDIT -->
+    <meta property="og:description" content="WebSlides is the easiest way to make HTML presentations. 120+ free slides ready to use."> <!-- EDIT -->
+    <meta property="og:updated_time" content="2017-01-04T17:32:14"> <!-- EDIT -->
+    <meta property="og:image" content="../static/images/share-webslides.jpg" > <!-- EDIT -->
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides"> <!-- EDIT -->
+    <meta name="twitter:creator" content="@jlantunez"> <!-- EDIT -->
+    <meta name="twitter:title" content="Make a Keynote presentation using HTML"> <!-- EDIT -->
+    <meta name="twitter:description" content="WebSlides is the easiest way to make HTML presentations. 120+ free slides ready to use."> <!-- EDIT -->
+    <meta name="twitter:image" content="../static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="../static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="../static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="../static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="../static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="../static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="../static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="../static/images/favicons/favicon-192.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <main role="main">
+      <article id="webslides">
+
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+        <section class="bg-black">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/N3wu_iOX0jw/')"></span>
+          <div class="wrap">
+            <h1>Secure Authentication with Universal 2nd Factor (U2F)</h1>
+            <h3>A Survival Guide for the Modern Web</h3>
+            <br>
+            <br>
+            <p>
+              Paul Duplys | 
+              <svg class="fa-twitter">
+                <use xlink:href="#fa-twitter"></use>
+              </svg> 
+              <a href="https://twitter.com/duplys">@duplys</a> |  
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              <a href="https://github.com/duplys">duplys</a> | 
+              <svg class="fa-home">
+                <use xlink:href="#fa-home"></use>
+              </svg>
+              <a href="https://duplys.github.io">duplys.github.io</a>
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-apple">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/oQuP_XBjOMY/')"></span>
+          <div class="wrap">
+            <h1>Who Am I?</h1>
+            <ul class="text-intro">
+              <li>Computer scientist by education (University of Tuebingen)</li>
+              <li>Information security researcher (PhD in Side Channel Analysis, 14+ years working on various security topics)</li>
+              <li>Senior manager "Reliable Distributed Systems" cluster @ Bosch Corporate Research</li>
+              <li>Program lead "Security, Privacy & Safety" @ Bosch Corporate Research</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="bg-apple">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/FZS9kYXpH0I/')"></span>
+          <div class="wrap">
+            <h1>Today's Fahrplan</h1>
+            <ul class="text-intro">
+              <li>Why Authentication?</li>
+              <li>What is Authentication?</li>
+              <li>What is Multifactor Authentication?</li>
+              <li>What is Universal 2nd Factor?</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="bg-apple">
+          <!-- <span class="background dark" style="background-image:url('https://source.unsplash.com/FXFz-sW0uwo/')"></span> -->
+          <div class="wrap">
+            <h1>Why Authentication?</h1>
+          </div>
+        </section>
+
+        <!-- Internet users had an average of 8.5 social media accounts in 2018, according to Statista (avg 4.8 in 2014). -->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <div class="wrap">
+              <h2 class="text-data">8.5</h2>
+              <h3>average number of social media accounts per internet user in 2018</h3>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://www.statista.com/statistics/788084/number-of-social-media-accounts/">Statista "Average number of social media accounts per internet user from 2013 to 2018"</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- An average person has 70-80 passwords, according to the research by the password manager NordPass. -->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <div class="wrap">
+              <h2 class="text-data">70-80</h2>
+              <h3>average number of passwords per person in 2019</h3>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://www.newswire.com/news/new-research-most-people-have-70-80-passwords-21103705">Newswire's article "New Research: Most People Have 70-80 Passwords", February 27, 2020</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- The average business employee must keep track of 191 passwords, according to a report from LastPass. -->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <div class="wrap">
+              <h2 class="text-data">191</h2>
+              <h3>number of password an average business employee must keep track of</h3>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://www.securitymagazine.com/articles/88475-average-business-user-has-191-passwords">Security Magazine's article "Average Business User Has 191 Passwords"</a>
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2><b>Secure authentication</b> is crucial for protecting access to these accounts</h2>
+          </div>
+        </section>
+
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>What is Authentication?</h2>
+          </div>
+        </section>
+
+        <section class="bg-apple">
+          <div class="wrap">
+            <blockquote class="text-quote">
+              <p>
+                Authentication is a term used to convey the idea that some means has been provided to guarantee that <b>entities are who they claim to be</b>, or that information has not been manipulated by unauthorized parties.
+              </p>
+            </blockquote>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="http://cacr.uwaterloo.ca/hac/about/chap1.pdf">Menezes, Alfred J., Van Oorschot, Paul C. and Vanstone, Scott A. <i>Handbook of applied cryptography</i>. CRC press, 1996 &mdash; Chapter 1, Section 1.7</a>
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-apple">
+          <div class="wrap">
+            <blockquote class="text-quote">
+              <p>
+                <b>Entity authentication</b> assures one party (through acquisition of corroborative evidence) of both the identity of a second party involved, and that the second party was active at the time the evidence was created or acquired.
+              </p>
+            </blockquote>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="http://cacr.uwaterloo.ca/hac/about/chap1.pdf">Menezes, Alfred J., Van Oorschot, Paul C. and Vanstone, Scott A.  <i>Handbook of applied cryptography</i>. CRC press, 1996 &mdash; Chapter 1, Section 1.7</a>
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-apple">
+          <div class="wrap">
+            <figure>
+              <img class="aligncenter" src="../static/uml/authentication.png" alt="authentication">
+            </figure>
+          </div>
+        </section>
+
+        <!-- The most common technique of entity authentication-->
+        <section class="bg-apple">
+          <div class="wrap">
+            <blockquote class="text-quote">
+              <p>
+                The most common technique is by the verifier checking the correctness of a message (possibly in response to an earlier message) which demonstrates that the claimant is in possesion of a <b>secret associated by design with the genuine party</b>.
+              </p>
+            </blockquote>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="http://cacr.uwaterloo.ca/hac/about/chap10.pdf">Menezes, Alfred J., Van Oorschot, Paul C. and Vanstone, Scott A.  <i>Handbook of applied cryptography</i>. CRC press, 1996 &mdash; Chapter 10, Section 10.1</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- The objectives of entity authentication protocols -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Objectives of entity authentication protocols</h2>
+              <ul class="text-intro">
+                <li><i>(correctness)</i> In case of honest parties, the protocol completes with the verifier B accepting claimant's A identity</li>
+                <li><i>(transferability)</i> B cannot reuse an authentification exchange with A so as to successfully impersonate A to a third party C</li>
+                <li><i>(impersonation)</i> The probability is negligible that any party C distinct from A, carrying out the protocol and playing the role of A, can cause B to accept A's identity. (<i>negligible</i> means "so small that it is not of practical significance")</li>
+                <li>The above points remain true even if:
+                  <ul>
+                    <li>a large number of previous authentications between A and B has been observed,</li>
+                    <li>the attacker C has participated in previous protocol executions with either or both A and B, and</li>
+                    <li>multiple instances of the protocol, possibly initiated by C, are running in parallel.</li>
+                  </ul>
+                </li>
+              </ul>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="http://cacr.uwaterloo.ca/hac/about/chap1.pdf">Menezes, Alfred J., Van Oorschot, Paul C. and Vanstone, Scott A.  <i>Handbook of applied cryptography</i>. CRC press, 1996 &mdash; Chapter 10, Section 10.1.1</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- The basis of entity authentication-->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Basis of entity authentication</h2>
+              <ul class="text-intro">
+                <li><i>something known.</i> Examples include standard passwords (sometimes used to derive a symmetric key), Personal Identification Numbers (PINs), and the secret or private keys whose knowledge is demonstrated in challenge-response protocols.</li>
+                <li><i>something possessed.</i> This is typically a physical accessory, resembling a metal key or passport function. Examples include magnetic-striped cards, chipcards (like your bank or credit card), and customized generators which provide time-variant passwords.</li>
+                <li><i>something inherent</i> (to a human or a machine). This category includes methods which make use of human or machine physical characteristics and involuntary actions (biometrics), such as handwritten signatures, fingerprints, voice, dynamic keyboard characteristics, or physical unclonable functions.</li>
+              </ul> 
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="http://cacr.uwaterloo.ca/hac/about/chap1.pdf">Menezes, Alfred J., Van Oorschot, Paul C. and Vanstone, Scott A.  <i>Handbook of applied cryptography</i>. CRC press, 1996 &mdash; Chapter 10, Section 10.1.1</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- Password-based authentication-->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Password-based Authentication</h2>
+            <p class="text-intro">
+              Passwords is the prevailent form of authentication in the internet. (And it's likely here to stay because it's the most versatile and &ndash; I would argue<sup>*</sup> &ndash; easiest to use method).
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              <sup>*</sup> for all practical purposes, a password works with (almost) <i>any</i> user interface, its use is uniform across different systems, and you can't loose it (you "only" need to remember it).
+            </p>
+            </div>
+        </section>
+
+        <!-- Security of password-based authentication-->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Security of Password-based Authentication</h2>
+            <p class="text-intro">
+              Security of password-based authentication essentially<sup>*</sup> relies on the assumption that the attacker cannot guess the password (either directly via the API or indirectly via rainbow tables)
+              </p>
+              <br>
+              <br>
+              <br>
+              <p>
+                <sup>*</sup> as an alternative, the attacker could also trick its victim into disclosing the password (e.g., using phishing or other social engineering techniques), but this applies to other authentication methods as well.
+              </p>
+          </div>
+        </section>
+
+        <!-- Strong passwords needed-->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2><b>Strong</b> passwords needed!</h2>
+          </div>
+        </section>
+
+        <!-- Examples of strong passwords -->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2>Examples?</h2>
+          </div>
+        </section>
+
+        <!-- Examples of strong passwords -->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2>tzYjcOnT}XTBt@S+Y0i5o|</h2>
+          </div>
+        </section>
+
+        <!-- Examples of strong passwords -->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2>'Rt},<|sh:V0F~zi^=@1Jj</h2>
+          </div>
+        </section>
+
+        <!-- Examples of strong passwords -->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2>G"8J*9Tv)Iw*RW&lx,ZAgY</h2>
+          </div>
+        </section>
+
+        <!-- Examples of strong passwords -->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <figure>
+              <img class="aligncenter" src="../static/images/face-scream.png" alt="scream" width="150">
+            </figure>
+          </div>
+        </section>
+
+        <!-- The problem with password-based authentication -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2> The Problem with Password-based Authentication</h2>
+            <p class="text-intro">
+              In practice, strong passwords are <b>impossible to memorize</b>, especially if you need dozens of them. As a result, most users choose simple &ndash; i.e., weak &ndash; passwords and re-use them across multiple accounts and online services.
+            </p>
+          </div>
+        </section>
+
+        <!-- Can we improve this? -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Can We Improve This?</h2>
+          </div>
+        </section>
+
+        <!-- Yes! With multi-factor authentication -->
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h2><b>Multi-factor</b> Authentication!</h2>
+          </div>
+        </section>
+
+        <!-- What is multi-factor authentication and two-factor authentication? -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>What is multi-factor authentication?</h2>
+            <p class="text-intro">
+            It's an authentication method that uses two or more pieces of evicence (so-called <i>factors</i>). The factors can be based on:
+              <ul class="text-intro">
+                <li><i>unique knowledge</i> (something the user and only the user knows),</li>
+                <li><i>unique possession</i> (something the user and only the user has) or</li>
+                <li><i>unique inherence</i> (something the user and only the user is).</li>
+              </ul>
+            </p>
+            <p class="text-intro">
+              One specific type of multi-factor authentication is the <b>Two-factor Authentication</b> (<b>2FA</b>). 2FA is an authentication method that uses some combination of <b>two</b> different factors (typically, something the user knows and something the user has).
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://en.wikipedia.org/w/index.php?title=Multi-factor_authentication&oldid=971039282">Wikipedia contributors, "Multi-factor authentication," <i>Wikipedia, The Free Encyclopedia</i>,  (accessed August 20, 2020).</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- Two-factor authentication and Universal 2nd Factor (U2F) -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Two-Factor Authentication and Universal 2nd Factor (U2F)</h2>
+          </div>
+        </section>
+
+        <!-- What is Universal 2nd Factor (U2F)?-->
+        <section class="bg-apple">
+         <div class="wrap">
+           <h2>Universal 2nd Factor (U2F)</h2>
+           <p class="text-intro">
+            U2F is an <b>open authentication standard</b> that implements 2FA. It enables internet users to securely access any number of online services with <b>one</b> single security key &ndash; specialized Universal Serial Bus (USB) or Near-Field Communication (NFC) device &ndash; instantly and with <b>no</b> drivers or client software needed.
+           </p>
+           <p class="text-intro">
+            The U2F standard is hosted and maintained by the <a href="https://fidoalliance.org/">FIDO ("Fast IDentity Online") Alliance</a>, an open industry association launched in 2013 to develop and promote authentication standards that help reduce the over-reliance on passwords. FIDO Alliance has 260+ members including companies like Apple, Google, Facebook, Amazon,  Intel, Infineon, Visa, American Express, and Samsung. 
+           </p>
+           <br>
+           <br>
+           <br>
+           <p>
+            Sources: <a href="https://www.yubico.com/authentication-standards/fido-u2f/">Yubico "FIDO U2F"</a> and <a href="https://en.wikipedia.org/w/index.php?title=FIDO_Alliance&oldid=972280263">Wikipedia contributors, "FIDO Alliance," <i>Wikipedia, The Free Encyclopedia</i>, (accessed August 20, 2020)</a>.
+           </p>
+         </div>
+        </section>
+
+        <!-- FIDO, FIDO2, UAF, U2F, and CTAP -->
+        <section class="bg-apple">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/ub1sSvJ_Tbs/')"></span>
+          <div class="wrap">
+            <h2>FIDO, FIDO2, UAF, U2F, and CTAP</h2>
+          </div>
+         </section>
+
+        <!-- FIDO Alliance & its mission -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <blockquote class="text-quote">
+              <p>
+                The FIDO Alliance mission is to change the nature of online strong authentication.
+              </p>
+            </blockquote>
+            <p class="text-intro">
+              <b>FIDO Alliance</b>'s primary objective is to enable online services and websites, whether on the open internet or within enterprises, to leverage native security features of end-user computing devices for strong user authentication and to reduce the problems associated with creating and remembering many online credentials.
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO2 Specifications -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>FIDO2 Specifications</h2>
+            <p class="text-intro">
+              FIDO Alliance has published three sets of specifications:
+              <ul class="text-intro">
+                <li>FIDO Universal Authentication Framework (FIDO UAF)</li>
+                <li>FIDO Universal Second Factor (FIDO U2F; relabed to CTAP1 with the release of FIDO2),</li>
+                <li>FIDO Client to Authenticator Protocols (CTAP; complementary to the <a href="http://www.w3.org/TR/2018/CR-webauthn-20180320/">W3C’s Web Authentication (WebAuthn) specification</a>)</li>
+              </ul>
+            </p>
+            <p class="text-intro">
+              Together, these specifications are known as <b>FIDO 2</b>.
+            </p>
+            <p class="text-intro">
+              FIDO2 supports <b>passwordless</b>, <b>second-factor</b> and <b>multi-factor</b> authentication with embedded (or bound) authenticators (such as biometrics or PINs) or external (or roaming) authenticators (such as FIDO Security Keys, mobile devices, wearables, etc). The complementary <b>W3C's WebAuthn</b> specification defines a <b>standard web API</b> that is being built into browsers and platforms to enable support for FIDO Authentication.
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://fidoalliance.org/specifications/">FIDO Alliance. <i>Specifications Overview</i></a>
+            </p>
+          </div>
+         </section>
+
+        <!-- FIDO UAF Protocol -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>FIDO UAF Protocol</h2>
+            <ul class="text-intro">
+              <li>The UAF protocol allows online services to offer <b>password-less</b> and <b>multi-factor</b> authentication.</li>
+              <li>The user registers their device to the online service by selecting a local authentication mechanism such as swiping a finger, looking at the camera, speaking into the mic, entering a PIN, etc.</li>
+              <li>Once registered, the user simply repeats the local authentication action whenever they need to authenticate to the service. (The user no longer needs to enter their password when authenticating from that device.)</li>
+            </ul>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-uaf-v1.1-ps-20170202/fido-uaf-overview-v1.1-ps-20170202.pdf">FIDO Alliance. <i>FIDO UAF Architectural Overview</i></a>
+            </p>
+          </div>
+         </section>
+
+        <!-- Illustration of FIDO UAF protocol -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <figure>
+              <img class="bg-light aligncenter" src="../static/images/FIDO_UAF.png" alt="scream" width="1200">
+            </figure>
+            <br>
+            <br>
+            <br>
+            <p>
+             Source: <a href="https://www.yubico.com/authentication-standards/fido-u2f/">Yubico "FIDO U2F"</a>.
+            </p>
+          </div>
+        </section>
+
+        <!-- The FIDO 2nd Factor (U2F) Protocol -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>FIDO Universal 2nd Factor (U2F) Protocol</h2>
+            <p class="text-intro">
+              The <b>Universal 2nd Factor (U2F) Protocol</b> allows online services to augment the security of their existing password infrastructure by adding a strong second factor to user login. The user logs in with a username and password as before. The service can also prompt the user to present a second factor device at any time it chooses.
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- Illustration of CTAP1/U2F protocol -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <figure>
+              <img class="bg-light aligncenter" src="../static/images/FIDO_U2F.png" alt="scream" width="1200">
+            </figure>
+            <br>
+            <br>
+            <br>
+            <p>
+             Source: <a href="https://www.yubico.com/authentication-standards/fido-u2f/">Yubico "FIDO U2F"</a>.
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F Protocol -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>FIDO CTAP1/U2F Protocol</h2>
+            <p class="text-intro">
+              U2F predates FIDO2. With the release of FIDO2 specification, U2F became part of the FIDO2 CTAP specification and was <b>relabeled CTAP1</b> (or <b>CTAP1/U2F</b>). The CTAP1/U2F protocol allows the use of existing FIDO U2F devices (such as FIDO Security Keys) for a <b>second-factor</b> authentication on FIDO2-enabled browsers and operating systems over USB, NFC, or BLE.
+            </p>
+            <p class="text-intro">
+              CTAP1/U2F is defined by the U2F Raw Messages specification. The CTAP1/U2F messages have an APDU-like binary structure. CTAP1/U2F may also be referred to as CTAP 1.2 or U2F 1.2. The latter was the U2F specification version used as the basis for several portions of the CTAP1 specification.
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              Sources: <a href="https://fidoalliance.org/specifications/">FIDO Alliance. <i>Specifications Overview</i></a> and <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.pdf">FIDO Alliance. <i>Client to Authenticator Protocol (CTAP)</i></a>.
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP2 Protocol -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>FIDO CTAP2 Protocol</h2>
+            <p class="text-intro">
+              The CTAP2 protocol allows the use of external authenticators (FIDO Security Keys, mobile devices) for authentication on FIDO2-enabled browsers and operating systems over USB, NFC, or BLE for a <b>passwordless</b>, second-factor or <b>multi-factor</b> authentication.
+            </p>
+            <p class="text-intro">
+              Unlike CTAP1, the CTAP2 protocol messages are encoded in the CTAP2 canonical <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.pdf#%06%1BqZ5%B4%E0/%5BMK%F4%173T%DFctap2-canonical-cbor-encoding-form">CBOR encoding form</a>. But both CTAP1/U2F and CTAP2 share the same underlying transports: USB Human Interface Device (USB HID), Near Field Communication (NFC), and Bluetooth Smart / Bluetooth Low Energy (BLE).
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://fidoalliance.org/specifications/">FIDO Alliance. <i>Specifications Overview</i></a>
+            </p>
+          </div>
+         </section>
+
+        <!-- FIDO CTAP1/U2F -->
+        <section class="bg-apple">
+           <div class="wrap">
+            <h2>FIDO CTAP1/U2F</h2>
+          </div>
+         </section>
+
+        <!-- FIDO CTAP1/U2F: U2F devices -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>U2F: Strong Authentication and Privacy for the Web</h2>
+            <p class="text-intro">
+              The U2F eco-system is designed to provide strong authentication for users on the web while preserving the user's privacy. The user carries a 'U2F device' as a second factor.
+            </p>
+            <ul class="flexblock metrics">
+              <li> 
+                <figure>
+                  <img class="bg-light aligncenter" src="../static/images/yubico-standard.png" alt="scream" width="250" style="border-radius: 50%">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img class="bg-light aligncenter" src="../static/images/yubico-usb-c.png" alt="scream" width="250" style="border-radius: 50%">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img class="bg-light aligncenter" src="../static/images/yubico-series-5.png" alt="scream" width="250" style="border-radius: 50%">
+                </figure>
+            </ul>
+            <p class="text-intro">
+              The U2F device can be embodied in various form factors, such as stand alone USB devices, stand alone Near Field Communication (NFC) devices, stand alone Bluetooth LE devices, built-on-board the user's client machine/mobile device as pure software or utilizing secured crypto capabilities. It is strongly preferable to have hardware backed security.
+            </p>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: U2F registration -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>U2F: Strong Authentication and Privacy for the Web</h2>
+            <p class="text-intro">
+              When the user registers the U2F device at an account at a particular origin (such as http://www.company.com) the device creates a new <b>key pair usable only at that origin</b> and <b>gives the origin the public key to associate with the account</b>. When the user authenticates (i.e., logs in) to the origin, in addition to username and password, the origin (in this case, http://www.company.com) can check whether the user has the U2F device by <b>verifying a signature</b> created by the device.
+            </p>
+            <p>
+              <figure>
+                <img class="aligncenter" src="../static/uml/u2f_key_pair.png" alt="U2F key pair">
+              </figure>
+            </p>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Same device across multiple services (key pairs - origins mapping) -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>U2F: Strong Authentication and Privacy for the Web</h2>
+            <p class="text-intro">
+              The user is able to use the <b>same device across multiple web services</b>: it serves as the user's physical web key chain with multiple keys to various sites provisioned from one physical device. Using the open U2F standard, any origin can use any U2F-compliant browser (or OS) to talk to any U2F compliant device.
+            </p>
+            <p>
+              <figure>
+                <img class="aligncenter" src="../static/uml/u2f_keys_origins.png" alt="scream">
+              </figure>
+            </p>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Same device across multiple services (key pairs - origins mapping) -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>U2F: Strong Authentication and Privacy for the Web</h2>
+            <p class="text-intro">
+              The U2F device registration and authentication operations are exposed through JavaScript APIs built into the browser and native APIs in mobile OSes.
+            </p>
+            <ul class="flexblock metrics">
+              <li> 
+                <figure>
+                  <img class="aligncenter" src="../static/images/u2f_lib_sign.png" alt="scream">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img class="aligncenter" src="../static/images/u2f_sign_code.png" alt="scream">
+                </figure>
+              </li>
+            </ul>
+            <p>
+              Source: <a href="https://developers.yubico.com/U2F/Libraries/Using_a_library.html">dev.yubico <i>Using a U2F Library</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Site-Specific Public/Private Key Pairs -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>U2F: Site-Specific Public/Private Key Pairs</h2>
+            <p class="text-intro">
+              At the core of the protocol, the U2F device has a capability (ideally, embodied in a secure element) to generate an <b>origin-specific public/private key pair</b>. During <b>user registration</b>, the browser sends the U2F device a <b>hash of the origin (combination of protocol, hostname and port)</b>; the U2F device returns a <b>public key</b> and a <b>key handle</b>. Very importantly, the U2F device <b>encodes the requesting origin into the key handle</b>. Finally, the browser sends the public key and the key handle to the origin online service or website.
+            </p>
+            <p>
+              <figure>
+                <img class="aligncenter" src="../static/uml/u2f_site-specific-keys.png" alt="U2F key pair">
+              </figure>
+            </p>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Site-Specific Public/Private Key Pairs -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>U2F: Site-Specific Public/Private Key Pairs</h2>
+            <p class="text-intro">
+              Later, when the user performs an authentication, the origin online service or website sends the user's key handle and a nonce (challenge) to the browser. The browser, in turn, sends this key handle, the nonce, and the hash of the origin which is requesting the authentication to the U2F device. The U2F device first <b>verifies</b> it had issued this key handle to that particular origin, then uses the <b>key handle to identify the user's private key</b>, and <b>creates a signature</b> (using the nonce) which is sent back to the origin (via the browser) to <b>verify the presence of the U2F device</b>. Thus, the key handle is simply an <b>identifier of a particular key on the U2F device</b>.
+            </p>
+            <p>
+              <figure>
+                <img class="aligncenter" src="../static/uml/u2f_site-specific-keys-part2.png" alt="U2F key pair">
+              </figure>
+            </p>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Rationale behind the origin check -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>U2F: Site-Specific Public/Private Key Pairs</h2>
+            <p class="text-intro">
+              The <b>origin check</b> ensures that the public keys and key handles issued by a U2F device to a particular online service or website <b>cannot</b> be used by a different online service or website. This is critical to ensure the user's <b>privacy</b>. If the browser works as it should, a site can verify identity with a user's U2F device <b>only with a key</b> which has been issued to that <b>particular site</b> by that <b>particular U2F device</b>. If this origin check was not present, then a public key and key handle issued by a U2F device could be used as a <b>'supercookie'</b> allowing multiple colluding sites to verify and correlate a particular user's identity.
+            </p>
+            <p>
+              <figure>
+                <img class="aligncenter" src="../static/uml/u2f_site-specific-keys-part3.png" alt="U2F key pair">
+              </figure>
+            </p>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Alerting the user -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Alerting the User: U2F Device Activation & Browser Infobars</h2>
+            <p class="text-intro">
+              Every U2F device has a <b>physical user presence test</b>. The user touches a button (or a sensor of some other kind) to <b>activate</b> the U2F device:
+              <ul class="text-intro">
+                <li>During registration, the U2F device responds to a request to generate a key pair only if it has been activated. In addition, the browser might display an infobar asking the user whether she/he wants to allow the current site to register the U2F device.</li>
+              <li>During authentication, the browser sends data to the U2F device that it needs to sign. The U2F device can be requested to require a test of user presence before it will sign. This ensures that a signature happens only with the user's permission and that malware cannot invoke the signature generation when the user is not present.</li>
+              </ul>
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Resilience against man-in-the-middle attacks during authentication -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Resilience Against Man-In-The-Middle (MITM) Attacks</h2>
+            <p class="text-intro">
+              The U2F device verifies the key handle and the origin verifies the signature produced by the U2F device. However, U2F's security against MITM attacks essentially relies on TLS security. As an example, it is possible to MITM a user's authentication to a site if the MITM is:
+              <ul class="text-intro">
+                <li>able to get a server cert for the actual origin name issued by a valid CA, and</li>
+                <li>ChannelIDs are NOT supported by the browser</li>
+              </ul>
+            </p>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Inexpensive U2F devices -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Inexpensive U2F Devices</h2>
+            <p class="text-intro">
+              A key goal of the U2F specification is to enable inexpensive yet secure devices. To achieve this, U2F devices have <b>minimal or no on-chip memory</b>.
+            </p>
+            <p class="text-intro">
+              The key handle does <b>not</b> have to be an index to the private key stored on the U2F device. Instead, the key handle can store (i.e., contain) the private key for the origin and the hash of the origin encrypted with a wrapping key known only to the U2F device secure element. When the key handle is passed to the U2F device, it unwraps it to retrieve the private key and the origin that it was generated for.
+            </p>
+            <p class="text-intro">
+              Alternatively, the U2F device can store the wrapped information in a table in off-chip memory. In this case, the key handle would be an index into this table in off-chip memory.
+            </p>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Verifying the genuineness of U2F devices -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Verifying the Genuineness of U2F Devices</h2>
+            <p class="text-intro">
+              A U2F device must be certified by a certification authority to ensure that it uses strong cryptography and is properly implemented. The origin needs to able to identify the type of U2F device it is speaking to so it can verify that the U2F device type has the <b>desired characteristics</b>. For example, a financial services site may choose to only accept hardware-backed U2F devices, while some other site may allow U2F devices implemented in software.  
+            </p>
+            <p class="text-intro">
+              Every U2F device has a shared <b>attestation key pair</b> present on it. This key is shared across a large number of U2F device units made by the same vendor (this is to prevent individual identifiability of the U2F device). The attestation key is used to sign messages during the registration step of the U2F device.
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Counters for Additional Protection -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Counters for Additional Protection</h2>
+            <p class="text-intro">
+              The U2F protocol incorporates a <b>usage counter</b> to allow the origin to detect problems in some circumstances. The U2F device stores the <b>number of signature operations</b> it has performed (either per key pair, per set of keys, or globally). The U2F device sends the actual counter value back to the browser which relays it to the origin after every signing operation. The U2F device also <b>concatenates</b> the counter value on to the <b>hash</b> of the client data before signing so that the origin can strongly verify that the counter value was not tampered with (by the browser).
+            </p>
+            <p class="text-intro">
+              The server compares the counter value received from the U2F device to a stored counter value from earlier interactions with the same U2F device. If the counter value has moved backward, it would signal that there is more than one U2F device with the same key pair for the origin (i.e., a clone of the U2F device has been created at some point).
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+        
+        <!-- FIDO CTAP1/U2F: Registering Multiple U2F Devices to the Same Account -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Registering Multiple U2F Devices to the Same Account</h2>
+            <p class="text-intro">
+              U2F does not limit the user to have a single device registered at a particular origin. If a user has registered multiple U2F devices within a single origin, then all the key handles are sent by the origin to the web browser during authentication. The web browser calls the javascript signature function with the array of key handles and sends the aggregated response back to the origin. Each attached activated U2F device signs for those key handles in the array that it recognizes.
+            </p>
+            <br>
+            <br>
+            <br>
+            <p>
+              Source: <a href="https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.pdf">FIDO Alliance. <i>Universal 2nd Factor (U2F) Overview</i></a>
+            </p>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Putting it all together -->
+        <section class="bg-apple">
+          <div class="wrap">
+            <h2>Putting it all Together: U2F Authentication</h2>
+            <figure>
+              <img class="aligncenter" src="../static/uml/u2f_authentication.png" alt="U2F authentication">
+            </figure>
+          </div>
+        </section>
+
+        <!-- FIDO CTAP1/U2F: Interactive part -->
+        <section class="bg-apple">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/cckf4TsHAuw/')"></span>
+          <div class="wrap">
+            <h2>Interactive Part</h2>  
+          </div>
+        </section>
+      </article>
+    </main>
+    <!--main-->
+
+    <!-- Required -->
+    <script src="../static/js/webslides.js"></script>
+
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="../static/js/svg-icons.js"></script>
+
+  </body>
+</html>

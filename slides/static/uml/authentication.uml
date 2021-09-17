@@ -22,6 +22,6 @@ ParticipantFontSize 24
 ParticipantFontColor White
 }
 
-C -> V: "I'm A and here's the evidence that proves my identity!"
+C -> V: "I'm A and here's a fresh evidence that proves my identity!"
 
 @enduml
